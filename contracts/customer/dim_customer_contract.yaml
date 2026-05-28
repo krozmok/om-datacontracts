@@ -1,0 +1,236 @@
+# ============================================================
+# Data Contract: dim_customer
+# Tabla: TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer
+# Estructura alineada con CreateDataContract schema de OpenMetadata
+# ============================================================
+
+# Campos básicos
+name: "dim_customer_contract"
+displayName: "Contrato - dim_customer"
+description: >
+  Contrato de datos para la tabla de dimensión de clientes.
+  Consolida información de múltiples fuentes: VTEX Jumbo/SISA,
+  VTEX Easy, Commercetools, Loyalty y Cencopay.
+
+# entityStatus: Draft | In Review | Approved | Deprecated | Rejected | Unprocessed
+entityStatus: "Draft"
+
+# FQN de la tabla — el script resolverá el ID automáticamente
+tableFQN: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer"
+
+# Owners y reviewers: usar FQN de usuario/equipo en OpenMetadata
+# Ejemplo: "data-team" o "user:john.doe"
+owners: []
+reviewers: []
+
+# Dominios y data products (FQN strings)
+domains: []
+dataProducts: []
+
+# termsOfUse es un STRING simple en la API
+termsOfUse: >
+  Uso permitido: analítica interna y reportería regional.
+  Prohibido compartir con terceros sin autorización.
+  Cumplimiento requerido: Política interna de datos personales Cencosud.
+
+# -------------------------------------------------------
+# SLA — ContractSLA
+# refreshFrequency.unit: hour | day | week | month | year
+# maxLatency.unit: minute | hour | day
+# -------------------------------------------------------
+sla:
+  refreshFrequency:
+    interval: 1
+    unit: "day"
+
+# -------------------------------------------------------
+# SCHEMA: subconjunto representativo de columnas críticas
+# Solo columnas que el contrato debe garantizar.
+# dataType válidos (OM): STRING, INT, BIGINT, FLOAT, DOUBLE,
+#   BOOLEAN, DATE, DATETIME, TIMESTAMP, etc.
+# -------------------------------------------------------
+schema:
+  # -- Clave primaria --
+  - name: "customer_id"
+    dataType: "STRING"
+    dataLength: 1
+    dataTypeDisplay: "string"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.customer_id"
+    description: "Identificador único del cliente consolidado entre fuentes"
+    tags: []
+    children: []
+
+  # -- Emails (PII) --
+  - name: "mail_vtex_jumbo_sisa"
+    dataType: "STRING"
+    dataLength: 1
+    dataTypeDisplay: "string"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.mail_vtex_jumbo_sisa"
+    description: "Email del cliente en VTEX Jumbo SISA"
+    tags: []
+    children: []
+
+  - name: "mail_vtex_easy"
+    dataType: "STRING"
+    dataLength: 1
+    dataTypeDisplay: "string"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.mail_vtex_easy"
+    description: "Email del cliente en VTEX Easy"
+    tags: []
+    children: []
+
+  - name: "mail_commercetools"
+    dataType: "STRING"
+    dataLength: 1
+    dataTypeDisplay: "string"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.mail_commercetools"
+    description: "Email del cliente en Commercetools"
+    tags: []
+    children: []
+
+  - name: "mail_loyalty"
+    dataType: "STRING"
+    dataLength: 1
+    dataTypeDisplay: "string"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.mail_loyalty"
+    description: "Email del cliente en el programa de fidelización"
+    tags: []
+    children: []
+
+  - name: "mail_cencopay"
+    dataType: "STRING"
+    dataLength: 1
+    dataTypeDisplay: "string"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.mail_cencopay"
+    description: "Email del cliente en Cencopay"
+    tags: []
+    children: []
+
+  # -- Fechas de nacimiento (PII) --
+  - name: "birthdate_vtex_jumbo_sisa"
+    dataType: "DATE"
+    dataLength: 1
+    dataTypeDisplay: "date"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.birthdate_vtex_jumbo_sisa"
+    description: "Fecha de nacimiento registrada en VTEX Jumbo SISA"
+    tags: []
+    children: []
+
+  - name: "birthdate_vtex_easy"
+    dataType: "DATE"
+    dataLength: 1
+    dataTypeDisplay: "date"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.birthdate_vtex_easy"
+    description: "Fecha de nacimiento registrada en VTEX Easy"
+    tags: []
+    children: []
+
+  - name: "birthdate_loyalty"
+    dataType: "DATE"
+    dataLength: 1
+    dataTypeDisplay: "date"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.birthdate_loyalty"
+    description: "Fecha de nacimiento registrada en Loyalty"
+    tags: []
+    children: []
+
+  # -- Opt-in flags --
+  - name: "has_ot_sm"
+    dataType: "BOOLEAN"
+    dataLength: 1
+    dataTypeDisplay: "boolean"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.has_ot_sm"
+    description: "Indica si el cliente tiene opt-in en Supermercados"
+    tags: []
+    children: []
+
+  - name: "has_ot_mdh"
+    dataType: "BOOLEAN"
+    dataLength: 1
+    dataTypeDisplay: "boolean"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.has_ot_mdh"
+    description: "Indica si el cliente tiene opt-in en MDH"
+    tags: []
+    children: []
+
+  - name: "has_ot_txd"
+    dataType: "BOOLEAN"
+    dataLength: 1
+    dataTypeDisplay: "boolean"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.has_ot_txd"
+    description: "Indica si el cliente tiene opt-in en TXD"
+    tags: []
+    children: []
+
+  # -- Fechas de carga (SLA / frescura) --
+  - name: "load_dts_dim_ct_sm"
+    dataType: "DATE"
+    dataLength: 1
+    dataTypeDisplay: "date"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.load_dts_dim_ct_sm"
+    description: "Fecha de carga del registro desde la fuente SM"
+    tags: []
+    children: []
+
+  - name: "load_dts_dim_ct_mdh"
+    dataType: "DATE"
+    dataLength: 1
+    dataTypeDisplay: "date"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.load_dts_dim_ct_mdh"
+    description: "Fecha de carga del registro desde la fuente MDH"
+    tags: []
+    children: []
+
+  - name: "load_dts_loyalty"
+    dataType: "DATE"
+    dataLength: 1
+    dataTypeDisplay: "date"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.load_dts_loyalty"
+    description: "Fecha de carga del registro desde Loyalty"
+    tags: []
+    children: []
+
+  - name: "load_dts_cencopay"
+    dataType: "DATE"
+    dataLength: 1
+    dataTypeDisplay: "date"
+    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.load_dts_cencopay"
+    description: "Fecha de carga del registro desde Cencopay"
+    tags: []
+    children: []
+
+# -------------------------------------------------------
+# SEMANTICS: reglas de negocio (SemanticsRule)
+# -------------------------------------------------------
+semantics:
+  - name: "customer_id no nulo"
+    description: "El identificador de cliente no puede ser nulo"
+    rule: '{"!=": [{"var": "customer_id"}, null]}'
+    enabled: true
+
+  - name: "Descripción obligatoria"
+    description: "La tabla debe tener una descripción documentada"
+    rule: '{"!=": [{"var": "description"}, null]}'
+    enabled: true
+
+  - name: "Propietario asignado"
+    description: "La tabla debe tener al menos un owner asignado"
+    rule: '{"and":[{"some":[{"var":"owners"},{"!=":[{"var":"fullyQualifiedName"},null]}]}]}'
+    enabled: true
+
+# -------------------------------------------------------
+# QUALITY EXPECTATIONS: referencias a TestCases existentes en OM
+# Agregar cuando los tests estén creados en la UI
+# -------------------------------------------------------
+qualityExpectations: []
+# Ejemplo:
+# - id: "uuid-del-test-case"
+#   type: "testCase"
+
+# -------------------------------------------------------
+# ODCS QUALITY RULES: reglas en formato Open Data Contract Std
+# -------------------------------------------------------
+odcsQualityRules: []
+
+# Tags a nivel de contrato
+tags: []
