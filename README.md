@@ -188,7 +188,7 @@ name: "dim_customer_contract"
 Fully Qualified Name de la tabla en OpenMetadata. El script lo usa para resolver el `id` interno de la tabla automáticamente.
 
 ```yaml
-tableFQN: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer"
+tableFQN: "TEST.<account_id>.<glue_db>.dim_customer"
 ```
 
 El FQN sigue el patrón: `SERVICIO.BASE_DE_DATOS.SCHEMA.TABLA`
@@ -344,7 +344,7 @@ tags:
 
 ```yaml
 name: "dim_customer_contract_minimal"
-tableFQN: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer"
+tableFQN: "TEST.<account_id>.<glue_db>.dim_customer"
 entityStatus: "Draft"
 ```
 
@@ -358,7 +358,7 @@ description: >
   Consolida información de múltiples fuentes: VTEX Jumbo/SISA,
   VTEX Easy, Commercetools, Loyalty y Cencopay.
 entityStatus: "Draft"
-tableFQN: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer"
+tableFQN: "TEST.<account_id>.<glue_db>.dim_customer"
 
 owners: []
 reviewers: []
@@ -379,7 +379,7 @@ schema:
     dataType: "STRING"
     dataLength: 1
     dataTypeDisplay: "string"
-    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.customer_id"
+    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.customer_id"
     description: "Identificador único del cliente consolidado entre fuentes"
     tags: []
     children: []
@@ -388,7 +388,7 @@ schema:
     dataType: "STRING"
     dataLength: 1
     dataTypeDisplay: "string"
-    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.mail_vtex_jumbo_sisa"
+    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.mail_vtex_jumbo_sisa"
     description: "Email del cliente en VTEX Jumbo SISA"
     tags: []
     children: []
@@ -397,7 +397,7 @@ schema:
     dataType: "BOOLEAN"
     dataLength: 1
     dataTypeDisplay: "boolean"
-    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.has_ot_sm"
+    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.has_ot_sm"
     description: "Indica si el cliente tiene opt-in en Supermercados"
     tags: []
     children: []
@@ -406,7 +406,7 @@ schema:
     dataType: "DATE"
     dataLength: 1
     dataTypeDisplay: "date"
-    fullyQualifiedName: "TEST.488022034671.cencosud_regional_customer_analytics_dev.dim_customer.load_dts_dim_ct_sm"
+    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.load_dts_dim_ct_sm"
     description: "Fecha de carga del registro desde la fuente SM"
     tags: []
     children: []
