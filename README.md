@@ -384,29 +384,29 @@ schema:
     tags: []
     children: []
 
-  - name: "mail_vtex_jumbo_sisa"
+  - name: "mail"
     dataType: "STRING"
     dataLength: 1
     dataTypeDisplay: "string"
-    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.mail_vtex_jumbo_sisa"
+    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.mail"
     description: "Email del cliente en VTEX Jumbo SISA"
     tags: []
     children: []
 
-  - name: "has_ot_sm"
+  - name: "optin"
     dataType: "BOOLEAN"
     dataLength: 1
     dataTypeDisplay: "boolean"
-    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.has_ot_sm"
+    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.optin"
     description: "Indica si el cliente tiene opt-in en Supermercados"
     tags: []
     children: []
 
-  - name: "load_dts_dim_ct_sm"
+  - name: "load_dts"
     dataType: "DATE"
     dataLength: 1
     dataTypeDisplay: "date"
-    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.load_dts_dim_ct_sm"
+    fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.load_dts"
     description: "Fecha de carga del registro desde la fuente SM"
     tags: []
     children: []
