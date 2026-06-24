@@ -355,8 +355,7 @@ name: "dim_customer_contract"
 displayName: "Contrato - dim_customer"
 description: >
   Contrato de datos para la tabla de dimensión de clientes.
-  Consolida información de múltiples fuentes: VTEX Jumbo/SISA,
-  VTEX Easy, Commercetools, Loyalty y Cencopay.
+  Consolida información de múltiples fuentes.
 entityStatus: "Draft"
 tableFQN: "TEST.<account_id>.<glue_db>.dim_customer"
 
@@ -389,7 +388,7 @@ schema:
     dataLength: 1
     dataTypeDisplay: "string"
     fullyQualifiedName: "TEST.<account_id>.<glue_db>.dim_customer.mail"
-    description: "Email del cliente en VTEX Jumbo SISA"
+    description: "Email del cliente"
     tags: []
     children: []
 
